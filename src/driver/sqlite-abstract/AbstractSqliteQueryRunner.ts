@@ -1710,7 +1710,7 @@ export abstract class AbstractSqliteQueryRunner
         const skipPrimary = primaryColumns.length > 1
         if (skipPrimary && hasAutoIncrement)
             throw new TypeORMError(
-                `Sqlite does not support AUTOINCREMENT on composite primary key`,
+                `Sqlite does not support AUTOINCREMENT on composite primary key in table ${table.name}`,
             )
 
         const columnDefinitions = table.columns
